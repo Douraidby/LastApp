@@ -19,27 +19,32 @@ public class Cercle {
         couleur = c;
     }
 
+    //recuperer le centre
     public Point getCentre() {
         return centre;
     }
 
+    //recuperer la couleur
     public int getCouleur() {
         return couleur;
     }
 
+    //appliquer une couleur
     public void setCouleur(int couleur) {
         this.couleur = couleur;
     }
 
+    //assigner un centre
     public void setCentre(Point centre) {
         this.centre = centre;
     }
+    //assigner les coordonnées du centre
     public void setXY(int x,int y)
     {
         this.centre.set(x,y);
 
     }
-
+    //switcher les couleurs
     public int switchcouleur(int newcolor)
     {
         int oldcolor = couleur;

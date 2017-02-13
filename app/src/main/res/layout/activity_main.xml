@@ -11,6 +11,39 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.exemple.cerclemoveapp.MainActivity">
 
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="300dp"
+        android:id="@+id/ligne1"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp">
+
+
+        <TextView
+            android:text="Score"
+            android:layout_height="wrap_content"
+            android:id="@+id/scoretext"
+            android:layout_weight="1"
+            android:layout_width="210dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/score"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:textColor="@android:color/holo_green_light" />
+    </LinearLayout>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,5 +55,35 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="300dp"
+        android:layout_below="@+id/ligne1"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp">
+
+        <TextView
+            android:text="Nombre de coups restants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nbcoupstext"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nbcoups"
+            android:layout_weight="1"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 </RelativeLayout>
