@@ -41,7 +41,7 @@ public class Jeu {
     boolean swiped;                 //si la couleur echangée ou non
     boolean match;                  //si il ya un match horizontal ou vertical
     int score = 0;                  //score accumulé
-    int coups = 6;                  //coups restants
+//    int coups = 6;                  //coups restants
     int level;                      //niveau du jeu
     int couleurs[] = {Color.GREEN, Color.RED, Color.YELLOW, Color.BLUE, 0xFF8B00FF, 0xFFFF7F00};
 
@@ -113,8 +113,8 @@ public class Jeu {
         canvas = new Canvas(tempBitmap);
         canvas.drawBitmap(bmp, 0, 0, null);
 
-        float RayonCercle = tempBitmap.getHeight() / (2*c[0]) - 10;   //Rayon d'un cercle
-        float lgcarre = (tempBitmap.getWidth() + 7) / c[1];        //+7 et +4 c pour ajuster la largeur et la longeur d'un carré
+        float RayonCercle = tempBitmap.getHeight() / (2*c[0]) - 10;     //Rayon d'un cercle
+        float lgcarre = (tempBitmap.getWidth() + 7) / c[1];             //+7 et +4 c pour ajuster la largeur et la longeur d'un carré
         float longcarre = (tempBitmap.getHeight() + 4) / c[0];
 
         Paint monpaint = new Paint();
@@ -130,9 +130,6 @@ public class Jeu {
 
         TextView scoreaffiche = (TextView) this.activite.findViewById(R.id.score);
         scoreaffiche.setText(String.valueOf(score));
-
-        TextView coupsaffiche = (TextView) this.activite.findViewById(R.id.nbcoups);
-        coupsaffiche.setText(String.valueOf(coups));
 
         swiped = false;
         match = false;
@@ -451,64 +448,6 @@ public class Jeu {
 
     }
 
-    /*************
-     * Remplacer les 3 cercles qui "match"
-     ***********/
-/*    public void RemplacerMatchTrois() {
-
-        int Xm;
-        int Ym;
-
-        if (TroisMH != null) {
-            if (!TroisMH.isEmpty()) {
-//                Log.d("Remplacer Horizontal", "  TroisMH Not Empty");
-                for (Cercle c : TroisMH) {
-                    Xm = c.getCentre().x;
-                    Ym = c.getCentre().y;
-                    while ((Ym - 1) >= 0) {
-                        contina[Ym][Xm].setCouleur(contina[Ym - 1][Xm].getCouleur());
-                        Ym--;
-                    }
-                    if (Ym == 0) {
-                        contina[Ym][Xm].setCouleur(couleurs[new Random().nextInt(couleurs.length)]);            //Couleur aleatoire
-                    }
-
-                    Log.d("TroisMV Cercle  ", WhatColor(-1 * c.getCouleur()) + "X  " + c.getCentre().x + "   Y  " + c.getCentre().y);
-                }
-                score += 100;
-                Log.d("SCore  Horizontal ", String.valueOf(score));
-            }
-        }
-
-        if (TroisMV != null) {
-
-            if (!TroisMV.isEmpty()) {
-//                Log.d("Remplacer Vertical", "  TroisMV Not Empty");
-                for (Cercle cercle : TroisMV) {
-                    Xm = cercle.getCentre().x;
-                    Ym = cercle.getCentre().y;
-                    while (Ym - 3 >= 0) {
-                        contina[Ym][Xm].setCouleur(contina[Ym - 3][Xm].getCouleur());
-                        Ym--;
-
-                    }
-                    if (Ym >= 0 && Ym <= 2) {
-                        contina[Ym][Xm].setCouleur(couleurs[new Random().nextInt(couleurs.length)]);
-                    }
-
-                    Log.d("TroisMV Cercle  ", WhatColor(-1 * cercle.getCouleur()) + "X  " + cercle.getCentre().x + "   Y  " + cercle.getCentre().y);
-                }
-                score += 100;
-                Log.d("SCore  Vertical ", String.valueOf(score));
-            }
-        }
-
-        if (TroisMH != null)
-            TroisMH.clear();
-        if (TroisMV != null)
-            TroisMV.clear();
-
-    }*/
 
     /*************
      * Verifier s'il ya de nouveaux match
@@ -550,30 +489,13 @@ public class Jeu {
      * Annuler un swipe si le doigt bouge seulement a l'interieur d'un cercle
      ***********/
     public void AnnulerSwipe() {
-//        if (cercleswiped!=null) {
-
+//
         contina[cercledown.getCentre().y][cercledown.getCentre().x].setCouleur(cercledown.getCouleur());
         contina[cercleswiped.getCentre().y][cercleswiped.getCentre().x].setCouleur(cercleswiped.getCouleur());
         Log.d("Annuler Swipe", "     Oui");
 
     }
 
-
-    public void Message(){
-
-        AlertDialog.Builder dAlert = new AlertDialog.Builder(this.activite);
-        dAlert.setTitle("Match-3");
-        dAlert.setCancelable(true);
-        dAlert.setPositiveButton("Ok",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        //dismiss the dialog
-                    }
-                });
-        dAlert.setMessage("Vous avez perdu!");
-        dAlert.create().show();
-
-    }
 
     /**********
      * Verification des couleurs dans la console Log
@@ -596,4 +518,10 @@ public class Jeu {
         return "Ne sais pas";
     }
 
+    /**********
+     * Retourner le score
+     *********/
+    public int getScore(){
+        return score;
+    }
 }
