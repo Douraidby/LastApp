@@ -15,6 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Regles"/>
+        <activity
+            android:name=".Niveaux"/>
+        <activity
+            android:name=".Game"/>
+
     </application>
 
 </manifest>

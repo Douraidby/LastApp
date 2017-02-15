@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CercleMoveApp</string>
+    <string name="quitter">Quitter</string>
+    <string name="reset">RESET</string>
+    <string name="demarrer">Démarrer</string>
+    <string name="regles">Régles du jeu</string>
+    <string name="hellojeu">Regles du Jeu!</string>
+    <string name="coups">Coups restants</string>
+    <string name="niv">NIVEAUX</string>
+    <string name="niveauxjeu">Veuillez choisir un niveaux pour commencer le jeu!</string>
+    <string name="niv1">NIVEAU 1</string>
+    <string name="niv2">NIVEAU 2</string>
+    <string name="niv3">NIVEAU 3</string>
+    <string name="niv4">NIVEAU 4</string>
+    <string name="regle1">Nombre de coups: 6 \nObjectif de points: 800</string>
+    <string name="regle2">Nombre de coups: 10 \nObjectif de points: 1200</string>
+    <string name="regle3">Nombre de coups: 10 \nObjectif de points: 1400</string>
+    <string name="regle4">Nombre de coups: 10 \nObjectif de points: 1800</string>
+    <string name="debuter">Veuillez choisir un niveau pour commencer le jeu!</string>
 </resources>

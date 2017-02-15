@@ -1,89 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.exemple.cerclemoveapp.MainActivity">
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical" android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.exemple.cerclemoveapp.MainActivity">
 
 
+<Button
+    android:layout_width="150dp"
+    android:layout_height="50dp"
+    android:id="@+id/btn_quitter"
+    android:text="@string/quitter"
+    android:layout_below="@+id/btn_regles"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:onClick="clickquitter"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="300dp"
-        android:id="@+id/ligne1"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp">
+<Button
+    android:layout_width="150dp"
+    android:layout_height="50dp"
+    android:id="@+id/btn_regles"
+    android:text="@string/regles"
+    android:layout_centerVertical="true"
+    android:layout_alignLeft="@+id/btn_quitter"
+    android:layout_alignStart="@+id/btn_quitter"
+    android:onClick="clickregles"/>
+
+<Button
+    android:layout_width="150dp"
+    android:layout_height="50dp"
+    android:id="@+id/btn_demarrer"
+    android:text="@string/demarrer"
+    android:layout_marginBottom="25dp"
+    android:layout_above="@+id/btn_regles"
+    android:layout_alignLeft="@+id/btn_regles"
+    android:layout_alignStart="@+id/btn_regles"
+    android:onClick="clickdemarrer"/>
 
 
-        <TextView
-            android:text="Score"
-            android:layout_height="wrap_content"
-            android:id="@+id/scoretext"
-            android:layout_weight="1"
-            android:layout_width="210dp"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            tools:textColor="@color/colorPrimaryDark" />
-
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/score"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_weight="1"
-            android:textColor="@android:color/holo_green_light" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/grid58"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:layout_marginTop="113dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="300dp"
-        android:layout_below="@+id/ligne1"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp">
-
-        <TextView
-            android:text="Nombre de coups restants"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/nbcoupstext"
-            android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            android:textSize="18sp" />
-
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/nbcoups"
-            android:layout_weight="1"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="18sp" />
-    </LinearLayout>
 
 </RelativeLayout>
